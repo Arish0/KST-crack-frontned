@@ -1,0 +1,5 @@
+export const money=value=>new Intl.NumberFormat('en-IN',{style:'currency',currency:'INR',maximumFractionDigits:2}).format(value);
+export const sellingPrice=p=>p.items?p.price:Math.round(p.price*(1-p.discount/100)*100)/100;
+export function distance(a,b,c,d){const r=x=>x*Math.PI/180,h=Math.sin(r(c-a)/2)**2+Math.cos(r(a))*Math.cos(r(c))*Math.sin(r(d-b)/2)**2;return 6371*2*Math.atan2(Math.sqrt(h),Math.sqrt(Math.max(0,1-h)));}
+export function whatsappMessage(order,name){return `Hello ${name}, I would like to place an order.\n\nOrder reference: ${order.id}\n\n${order.items.map((i,n)=>`${n+1}. ${i.name} — ${i.qty} × ${money(i.price)} = ${money(i.total)}`).join('\n')}\n\nSavings: ${money(order.savings)}\nProduct total: ${money(order.subtotal)}\nDelivery charge: ${money(order.deliveryFee)}\nFinal quote: ${money(order.total)}\n\nPlease confirm availability and the final quote.`;}
+export function readCart(){try{const cart=JSON.parse(localStorage.getItem('kst-cart')||'[]');return Array.isArray(cart)?cart.filter(i=>typeof i?.id==='string'&&Number.isInteger(i.qty)&&i.qty>0&&i.qty<=10000):[];}catch{return [];}}

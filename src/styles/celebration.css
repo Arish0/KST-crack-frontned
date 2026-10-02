@@ -1,0 +1,45 @@
+/* Each slide carries its colour into the header and search controls. */
+.festival-app{--festival-soft:#ffe1bb;--festival-ink:#713a1e;--theme-accent:#b14e23;--search-surface:#fff4df}
+.festival-app[data-theme=green]{--festival-soft:#bfe9d7;--festival-ink:#164b3e;--theme-accent:#176c57;--search-surface:#ebfff4}
+.festival-app[data-theme=pink]{--festival-soft:#f5c6de;--festival-ink:#6b2349;--theme-accent:#9b3567;--search-surface:#fff0f7}
+.festival-app[data-theme=blue]{--festival-soft:#bddff7;--festival-ink:#234866;--theme-accent:#275f98;--search-surface:#edf8ff}
+.festival-header{background:var(--festival-soft);border-radius:0 0 32px 32px;transition:background-color .35s ease}
+.festival-search{background:var(--search-surface);border-color:var(--theme-accent);transition:background-color .35s ease,border-color .35s ease}
+.festival-search>svg,.festival-location,.festival-categories button.active,.kst-brand{color:var(--festival-ink)}
+.search-go,.desktop-cart b,.mobile-header-cart b{background:var(--theme-accent);transition:background-color .35s ease}
+.festival-categories button.active{border-bottom-color:var(--theme-accent)}
+.festival-location,.mobile-header-cart{background:var(--search-surface);transition:background-color .35s ease}
+.slide-orange{background:linear-gradient(145deg,#e18429,#ba491d)}
+.slide-green{background:linear-gradient(145deg,#189477,#086655)}
+.slide-pink{background:linear-gradient(145deg,#bb367e,#801a54)}
+.slide-blue{background:linear-gradient(145deg,#287ebc,#17477e)}
+.festival-slide .slide-topline,.festival-slide .slide-detail{color:#fff6e5}
+.festival-track{touch-action:pan-x pan-y;overscroll-behavior-x:contain}
+.carousel-dots{gap:0}
+.carousel-dots button,.carousel-dots button.active{position:relative;width:34px;height:40px;background:transparent;border-radius:0}
+.carousel-dots button:after{content:'';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:8px;height:8px;border-radius:10px;background:#ba9b88;transition:width .2s,background .2s}
+.carousel-dots button.active:after{width:24px;background:var(--theme-accent)}
+.carousel-arrows button{height:40px;width:40px;padding:10px}
+
+/* The two packs from the original illustration float independently. */
+.celebration-packs{position:relative;z-index:1;width:100%;max-width:360px;height:235px;isolation:isolate}
+.celebration-pack{position:absolute;display:flex;flex-direction:column;align-items:center;justify-content:center;border:5px solid #ffffff59;box-shadow:12px 20px 22px #351c312b;will-change:transform}
+.celebration-pack span{font-size:57px;line-height:1.1}
+.celebration-pack strong{font-size:25px;letter-spacing:3px;margin-top:7px}
+.celebration-pack small{font-size:7px;letter-spacing:1.5px;margin-top:13px;white-space:nowrap}
+.pack-navy{width:162px;height:191px;left:12%;top:21px;background:#233d53;color:#ffdc8f;transform:rotate(-12deg);animation:float-navy 5s ease-in-out infinite}
+.pack-coral{width:125px;height:159px;left:49%;top:67px;background:#af4335;color:#ffe8bb;transform:rotate(11deg);animation:float-coral 5.8s ease-in-out infinite}
+.pack-coral strong{font-size:15px;letter-spacing:2px}.pack-coral span{font-size:47px}
+.celebration-saving{position:absolute;right:0;bottom:0;width:112px;height:112px;border-radius:50%;background:#fff9ed;color:#233d53;display:flex;align-items:center;justify-content:center;flex-direction:column;transform:rotate(-10deg);box-shadow:0 6px 18px #56251a1a;animation:float-saving 6s ease-in-out infinite;z-index:2}
+.celebration-saving small{font-size:9px;letter-spacing:1px}.celebration-saving strong{font-size:36px;color:#b12704;margin:6px 0;font-weight:800}.celebration-saving span{font-size:8px}
+.pack-spark{position:absolute;color:#ffe1a1;animation:spark-twinkle 3s ease-in-out infinite;pointer-events:none}
+.spark-one{left:3%;top:43px;font-size:27px}.spark-two{right:7%;top:19px;font-size:35px;animation-delay:-1s}.spark-three{left:39%;top:4px;font-size:11px;animation-delay:-2s}
+.festival-artwork{animation:artwork-float 6s ease-in-out infinite}
+@keyframes float-navy{0%,100%{transform:translateY(0) rotate(-12deg)}50%{transform:translateY(-10px) rotate(-9deg)}}
+@keyframes float-coral{0%,100%{transform:translateY(0) rotate(11deg)}50%{transform:translateY(-7px) rotate(14deg)}}
+@keyframes float-saving{0%,100%{transform:translateY(0) rotate(-10deg)}50%{transform:translateY(-5px) rotate(-7deg)}}
+@keyframes spark-twinkle{0%,100%{opacity:.5;transform:scale(.8)}50%{opacity:1;transform:scale(1.12)}}
+@keyframes artwork-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@media(max-width:640px){.carousel-arrows button{height:40px;width:40px}.festival-header{border-radius:0 0 24px 24px}.celebration-packs{height:221px}.pack-navy{width:142px;height:175px;left:9%;top:22px}.pack-coral{width:110px;height:145px;left:48%;top:67px}.celebration-saving{width:99px;height:99px;right:-3px;bottom:0}.celebration-saving strong{font-size:32px}.celebration-saving small{font-size:8px}.celebration-saving span{font-size:7px}.celebration-pack strong{font-size:23px}.pack-coral strong{font-size:13px}.celebration-pack small{font-size:6px;letter-spacing:1px}}
+@media(max-width:360px){.celebration-packs{height:200px}.pack-navy{width:127px;height:157px;left:7%}.pack-coral{width:98px;height:133px;top:60px}.celebration-saving{width:88px;height:88px;right:-6px}.celebration-saving strong{font-size:29px}}
+@media(prefers-reduced-motion:reduce){.celebration-pack,.celebration-saving,.pack-spark,.festival-artwork{animation:none;will-change:auto}.festival-header,.festival-search,.search-go,.festival-location,.mobile-header-cart{transition:none}}

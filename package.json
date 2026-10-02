@@ -1,0 +1,26 @@
+{
+  "name": "kst-crack-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "tsc --noEmit && next build",
+    "dev": "next dev",
+    "deploy": "wrangler deploy"
+  },
+  "engines": {
+    "node": ">=22.12"
+  },
+  "dependencies": {
+    "next": "^16.3.8",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "three": "^0.186.1"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.4",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "typescript": "^7.0.2",
+    "wrangler": "^4.147.0"
+  }
+}

@@ -1,0 +1,12 @@
+export type ProductArt='spark'|'pot'|'wheel'|'sky'|'gift';
+export interface Product{id:string;name:string;category:string;unit:string;price:number;discount:number;stock:number;featured:boolean;art:ProductArt;image?:string;sold:number}
+export interface BundleItem{id:string;qty:number}
+export interface Bundle{id:string;name:string;description:string;price:number;stock:number;items:BundleItem[]}
+export interface ShopSettings{name:string;phone:string;whatsapp:string;hubLat:number|null;hubLng:number|null;radius:number;deliveryFee:number;banner:string}
+export interface CatalogResponse{settings:ShopSettings;products:Product[];bundles:Bundle[]}
+export interface CartItem{id:string;qty:number}
+export interface DeliveryLocation{lat:number;lng:number;km:number|null;eligible:boolean}
+export interface QuoteLine{id:string;name:string;qty:number;price:number;original:number;total:number}
+export interface OrderQuote{id:string;items:QuoteLine[];subtotal:number;savings:number;deliveryFee:number;total:number}
+export interface OrderRequest{name:string;address:string;mode:'delivery'|'pickup';lat:number|null;lng:number|null;items:CartItem[]}
+export type ProductOrBundle=Product|Bundle;
