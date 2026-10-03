@@ -1,4 +1,5 @@
 import React from 'react';
 import {useShop} from '../context/ShopContext';
 import {money} from '../lib/helpers';
-export default function MobileCart(){const {totals,openCart}=useShop();return totals.count>0&&<button className="mobile-cart" onClick={openCart}><span>View cart · <b>{totals.count}</b> items</span><strong>{money(totals.subtotal)}</strong></button>;}
+import {useLanguage} from '../context/LanguageContext';
+export default function MobileCart(){const {totals,openCart}=useShop(),{t}=useLanguage();return totals.count>0&&<button className="mobile-cart" onClick={openCart}><span>{t('View cart')} · <b>{totals.count}</b> {t('items')}</span><strong>{money(totals.subtotal)}</strong></button>;}
