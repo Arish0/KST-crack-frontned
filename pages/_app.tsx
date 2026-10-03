@@ -5,6 +5,7 @@ import '../src/styles/festival.css';
 import '../src/styles/celebration.css';
 import '../src/styles/polish.css';
 import '../src/styles/bundles.css';
+import '../src/styles/bulk-welcome.css';
 
 export default function KstApp({Component,pageProps}:AppProps){
   return <Component {...pageProps}/>;
