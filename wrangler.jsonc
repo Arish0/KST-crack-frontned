@@ -3,6 +3,10 @@
   "main": "worker.mjs",
   "compatibility_date": "2026-09-01",
   "workers_dev": true,
+  "routes": [
+    { "pattern": "kstcrackers.shop", "custom_domain": true },
+    { "pattern": "www.kstcrackers.shop", "custom_domain": true }
+  ],
   "assets": {
     "directory": "./out",
     "binding": "ASSETS",
