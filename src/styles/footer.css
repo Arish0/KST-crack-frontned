@@ -1,0 +1,35 @@
+.festival-app .store-footer{padding:0 0 0;background:#fff2ef;color:#60383a;text-align:left;border-top:1px solid #f1d9d4}
+.festival-app .store-footer .back-top{padding:13px 24px;background:#fbe9e6;color:#78444a;text-align:center;font-size:12px;font-weight:650}
+.festival-app .store-footer-main{display:grid;grid-template-columns:1.15fr 1.05fr 1.15fr 1fr;gap:36px;max-width:1480px;margin:0 auto;padding:36px 34px 28px}
+.store-footer-main section{min-width:0}
+.store-footer-main h3{margin:3px 0 13px;color:#432e32;font-size:14px;font-weight:750}
+.festival-app .store-footer-main p{margin:0 0 12px;color:#725459;font-size:11px;line-height:1.65}
+.festival-app .store-footer .store-brand{display:inline-flex;align-items:center;gap:8px;margin-bottom:10px;color:#5b292a;font-family:Georgia,serif;font-size:23px;font-weight:800;letter-spacing:-.6px}
+.festival-app .store-footer .store-brand:before{content:'✦';display:grid;place-items:center;width:30px;height:30px;border-radius:9px;background:#842917;color:#ffe8b7;font-family:Arial,sans-serif;font-size:18px}
+.festival-app .store-footer .store-brand span{color:#8c3e35;font-size:13px;letter-spacing:1.2px;text-transform:uppercase}
+.footer-trust-badge{display:inline-flex;align-items:center;padding:7px 9px;border-radius:999px;background:#ffebe6;color:#843c34;font-size:9px;font-weight:800}
+.footer-links-block{display:flex;flex-direction:column;align-items:flex-start}
+.festival-app .store-footer .footer-links-block a{margin:0 0 8px;color:#70484c;font-size:11px;line-height:1.35}
+.festival-app .store-footer .footer-links-block a:hover{text-decoration:underline;color:#922f24}
+.footer-hub-note{display:grid;gap:5px;margin-top:11px;padding:10px 11px;border:1px solid #f3d5cf;border-radius:12px;background:#ffebe7;color:#713a39;font-size:10px;line-height:1.5}
+.footer-hub-note span{color:#75585b}
+.footer-whatsapp{display:inline-flex;align-items:center;min-height:36px;margin:1px 0 9px;padding:8px 12px;border-radius:8px;background:#842917;color:#fff8ef!important;font-size:10px;font-weight:750}
+.footer-whatsapp:hover{background:#6f2115;text-decoration:none}
+.festival-app .store-footer .footer-support-block small{display:block;margin-top:0;color:#74565a;font-size:9px}
+.footer-contact-pending{display:block;margin:7px 0 11px;color:#784b50;font-size:10px}
+.festival-app .store-footer .footer-diwali-link{display:flex;margin-top:11px;border-color:#e5c2a2;background:#fff8ec;color:#82452e}
+.footer-manufacturer{display:flex;align-items:center;gap:14px;max-width:1480px;margin:0 auto 20px;padding:15px 18px;border:1px solid #f3d8d2;border-radius:17px;background:#ffebe7}
+.footer-manufacturer-icon{display:grid;place-items:center;flex:0 0 42px;width:42px;height:42px;border-radius:12px;background:#842917;color:#ffdf87;font-size:22px}
+.footer-manufacturer-copy{flex:1;min-width:0}
+.footer-manufacturer-copy>div{display:flex;align-items:center;flex-wrap:wrap;gap:8px}
+.footer-manufacturer-copy strong{color:#653536;font-size:13px}
+.footer-partner-tag{padding:4px 7px;border-radius:999px;background:#f9d9bd;color:#874416;font-size:8px;font-weight:800;letter-spacing:.4px;text-transform:uppercase}
+.festival-app .store-footer .footer-manufacturer-copy p{margin:4px 0;color:#755358;font-size:10px}
+.festival-app .store-footer .footer-manufacturer-copy small{margin:0;color:#77565b;font-size:9px;line-height:1.6}
+.footer-authenticity{flex:none;padding:9px 12px;border:1px solid #edcbc3;border-radius:9px;color:#7e3e37;font-size:9px;font-weight:750}
+.festival-app .store-footer .store-copyright{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 34px;background:#ffefed;color:#82494c;font-size:11px;letter-spacing:.1px}
+.store-copyright nav{display:flex;flex-wrap:wrap;gap:17px}
+.festival-app .store-footer .store-copyright nav a{color:#78494d;font-size:10px}
+.store-copyright nav a:hover{text-decoration:underline}
+@media(max-width:900px){.festival-app .store-footer-main{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 34px}.footer-manufacturer{margin-right:20px;margin-left:20px}}
+@media(max-width:600px){.festival-app .store-footer{padding-bottom:calc(78px + env(safe-area-inset-bottom))}.festival-app .store-footer-main{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 18px;padding:27px 18px 22px}.store-footer-main h3{font-size:12px;margin-bottom:9px}.festival-app .store-footer-main p{font-size:10px}.festival-app .store-footer .store-brand{font-size:20px}.festival-app .store-footer .store-brand span{font-size:11px}.footer-trust-badge{font-size:8px}.festival-app .store-footer .footer-links-block a{font-size:10px;margin-bottom:7px}.footer-manufacturer{align-items:flex-start;gap:10px;margin:0 13px 15px;padding:12px;border-radius:13px;flex-wrap:wrap}.footer-manufacturer-icon{flex-basis:35px;width:35px;height:35px;font-size:18px}.footer-manufacturer-copy{flex-basis:calc(100% - 46px)}.footer-manufacturer-copy strong{font-size:11px}.footer-partner-tag{font-size:7px}.festival-app .store-footer .footer-manufacturer-copy small{font-size:8px}.footer-authenticity{margin-left:45px;padding:7px 9px;font-size:8px}.festival-app .store-footer .store-copyright{align-items:flex-start;flex-direction:column;gap:10px;padding:14px 18px;font-size:10px}.store-copyright nav{gap:12px}.festival-app .store-footer .store-copyright nav a{font-size:9px}}

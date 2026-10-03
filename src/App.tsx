@@ -24,7 +24,7 @@ export default function App(){
  const [search,setSearch]=useState(''),[category,setCategory]=useState('All'),[sort,setSort]=useState('featured'),[theme,setTheme]=useState<FestivalTheme>('orange'),[welcomeStage,setWelcomeStage]=useState<WelcomeStage>(null),[previewDiwali,setPreviewDiwali]=useState(false),[previewGiftBoxes,setPreviewGiftBoxes]=useState(false);
  const welcomeChecked=useRef(false),diwaliFirst=useRef(false);
  const promotion=catalog?.diwaliGifts||(previewDiwali?localDiwaliPreview:null);
- useEffect(()=>{if(process.env.NODE_ENV==='development'){const preview=new URLSearchParams(window.location.search).get('preview');if(preview==='diwali')setPreviewDiwali(true);if(preview==='giftboxes')setPreviewGiftBoxes(true);}},[]);
+ useEffect(()=>{if(process.env.NODE_ENV==='development'){const preview=new URLSearchParams(window.location.search).get('preview');if(preview==='diwali'||preview==='giftboxes')setPreviewDiwali(true);if(preview==='giftboxes')setPreviewGiftBoxes(true);}},[]);
  useEffect(()=>{
   if(loading||welcomeChecked.current)return;
   welcomeChecked.current=true;
@@ -40,12 +40,12 @@ export default function App(){
  const scroll=()=>document.getElementById('catalog')?.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
  const browse=(value:string)=>{setSort(value);scroll();};
  const browseGiftBoxes=()=>{setSearch('');setCategory('Gift Boxes');setSort('featured');requestAnimationFrame(scroll);};
- function openDiwaliGifts(){diwaliFirst.current=false;if(promotion?.enabled)setWelcomeStage('diwali-gifts');}
+ function openDiwaliGifts(){diwaliFirst.current=false;if(promotion)setWelcomeStage('diwali-gifts');}
  return <div className="festival-app" lang={language} data-theme={theme}>
-  {welcomeStage==='diwali-gifts'&&promotion?.enabled&&<DiwaliGiftsWelcome offer={promotion} preview={previewDiwali&&!catalog?.diwaliGifts?.enabled} onClose={()=>setWelcomeStage(diwaliFirst.current?'bulk':null)}/>}
+  {welcomeStage==='diwali-gifts'&&promotion&&<DiwaliGiftsWelcome offer={promotion} preview={previewDiwali&&!catalog?.diwaliGifts?.enabled} onClose={()=>setWelcomeStage(diwaliFirst.current?'bulk':null)}/>}
   {welcomeStage==='bulk'&&<BulkWelcome onBrowse={browseGiftBoxes} onClose={()=>setWelcomeStage(null)}/>}
-  <Header search={search} setSearch={setSearch} category={category} setCategory={setCategory} onSearch={scroll} onOffers={()=>browse('offers')} onDiwaliGifts={openDiwaliGifts} diwaliGiftsEnabled={Boolean(promotion?.enabled)}/>
-  {promotion?.enabled&&<FloatingDiwaliGifts onClick={openDiwaliGifts}/>}
+  <Header search={search} setSearch={setSearch} category={category} setCategory={setCategory} onSearch={scroll} onOffers={()=>browse('offers')} onDiwaliGifts={openDiwaliGifts} diwaliGiftsEnabled={Boolean(promotion)}/>
+  {promotion&&<FloatingDiwaliGifts onClick={openDiwaliGifts}/>}
   {!online&&<div className="connection-status" role="status">{t('You’re offline. Your cart is safe. Reconnect to load products or save an order.')}</div>}
   <main aria-busy={loading}>
    <Hero onThemeChange={setTheme}/>
@@ -58,6 +58,6 @@ export default function App(){
    <Catalog search={search} setSearch={setSearch} category={category} setCategory={setCategory} sort={sort} setSort={setSort}/>
    <HowItWorks/>
   </main>
-  <Footer onDiwaliGifts={openDiwaliGifts} showDiwaliGifts={Boolean(promotion?.enabled)}/><Cart/><MobileCart/><BottomNavigation/><div id="toast" className={toast?'visible':''} role="status" aria-live="polite">{t(toast)}</div>
+  <Footer onDiwaliGifts={openDiwaliGifts} showDiwaliGifts={Boolean(promotion)}/><Cart/><MobileCart/><BottomNavigation/><div id="toast" className={toast?'visible':''} role="status" aria-live="polite">{t(toast)}</div>
  </div>;
 }
