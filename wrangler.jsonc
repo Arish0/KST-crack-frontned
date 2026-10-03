@@ -21,5 +21,10 @@
   "vars": {
     "SITE_ROLE": "customer"
   },
+  "previews": {
+    "vars": {
+      "SITE_ROLE": "customer"
+    }
+  },
   "account_id": "58cf4c0436d6ae15fcc2585cb8bf9c61"
 }
