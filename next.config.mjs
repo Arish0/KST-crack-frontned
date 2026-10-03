@@ -1,1 +1,1 @@
-export default {output:'export',poweredByHeader:false,reactStrictMode:true,images:{unoptimized:true}};
+export default {output:'export',poweredByHeader:false,reactStrictMode:true,images:{unoptimized:true},agentRules:false};

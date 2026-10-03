@@ -1,12 +1,12 @@
 import {useEffect,useRef,useState} from 'react';
 import {useLanguage} from '../context/LanguageContext';
 
-export default function BulkWelcome({onBrowse}:{onBrowse:()=>void}){
+export default function BulkWelcome({onBrowse,onClose=()=>{}}:{onBrowse:()=>void;onClose?:()=>void}){
  const {t}=useLanguage();
  const dialog=useRef<HTMLDialogElement>(null),[visible,setVisible]=useState(false);
  useEffect(()=>{try{if(sessionStorage.getItem('kst-bulk-welcome-seen'))return;}catch{}setVisible(true);},[]);
  useEffect(()=>{const element=dialog.current;if(visible&&!element?.open)element?.showModal();},[visible]);
- function close(){try{sessionStorage.setItem('kst-bulk-welcome-seen','1');}catch{}dialog.current?.close();setVisible(false);}
+ function close(){try{sessionStorage.setItem('kst-bulk-welcome-seen','1');}catch{}dialog.current?.close();setVisible(false);onClose();}
  function browse(){close();onBrowse();}
  return <dialog ref={dialog} className="bulk-welcome" aria-labelledby="bulk-welcome-title" aria-describedby="bulk-welcome-description" onCancel={event=>{event.preventDefault();close();}}>
   <div className="bulk-welcome-card">

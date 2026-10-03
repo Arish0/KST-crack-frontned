@@ -4,7 +4,7 @@ export default {
   const url=new URL(request.url),admin=env.SITE_ROLE==='admin',path=url.pathname;
   if(path.startsWith('/api/')||path.startsWith('/images/')){
    const image=path.startsWith('/images/');
-   const allowed=image?request.method==='GET':admin?(path==='/api/login'||path==='/api/admin'||path.startsWith('/api/admin/')):(path==='/api/catalog'||path==='/api/orders');
+   const allowed=image?request.method==='GET':admin?(path==='/api/login'||path==='/api/admin'||path.startsWith('/api/admin/')):(path==='/api/catalog'||path==='/api/orders'||path==='/api/diwali-prizes/entries'||path==='/api/diwali-prizes/wallet');
    if(!allowed)return Response.json({error:'Not found'},{status:404});
    if(request.method==='POST'){
     const origin=request.headers.get('Origin');
