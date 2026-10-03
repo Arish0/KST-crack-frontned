@@ -1,6 +1,6 @@
 import type {SVGProps} from 'react';
 
-export type IconName='search'|'pin'|'cart'|'home'|'sparkles'|'gift'|'flower'|'wheel'|'rocket'|'tag'|'list'|'chevron'|'arrow'|'check'|'play'|'pause';
+export type IconName='search'|'pin'|'cart'|'home'|'sparkles'|'gift'|'flower'|'wheel'|'rocket'|'tag'|'list'|'chevron'|'arrow'|'check'|'play'|'pause'|'close'|'minus'|'plus';
 const paths:Record<IconName,React.ReactNode>={
  search:<><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></>,
  pin:<><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></>,
@@ -18,5 +18,8 @@ const paths:Record<IconName,React.ReactNode>={
  check:<path d="m5 12 4 4L19 6"/>,
  play:<path d="m8 4 12 8-12 8Z"/>,
  pause:<><path d="M8 4v16M16 4v16"/></>
+ ,close:<path d="m6 6 12 12M18 6 6 18"/>,
+ minus:<path d="M5 12h14"/>,
+ plus:<path d="M12 5v14m-7-7h14"/>
 };
 export default function Icon({name,...props}:SVGProps<SVGSVGElement>&{name:IconName}){return <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" {...props}>{paths[name]}</svg>;}

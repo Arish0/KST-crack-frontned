@@ -8,5 +8,5 @@ export interface CartItem{id:string;qty:number}
 export interface DeliveryLocation{lat:number;lng:number;km:number|null;eligible:boolean}
 export interface QuoteLine{id:string;name:string;qty:number;price:number;original:number;total:number}
 export interface OrderQuote{id:string;items:QuoteLine[];subtotal:number;savings:number;deliveryFee:number;total:number}
-export interface OrderRequest{name:string;address:string;mode:'delivery'|'pickup';lat:number|null;lng:number|null;items:CartItem[]}
+export interface OrderRequest{name:string;mobile:string;alternateMobile:string;address:string;mode:'delivery'|'pickup';lat:number|null;lng:number|null;items:CartItem[]}
 export type ProductOrBundle=Product|Bundle;

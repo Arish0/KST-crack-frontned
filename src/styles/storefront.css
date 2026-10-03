@@ -2,3 +2,48 @@
 @import './header.css';
 @import './catalog.css';
 @import './cart.css';
+/* Tamil locale: allow native glyphs and longer labels room to wrap on phones. */
+[lang="ta"]{font-family:"Noto Sans Tamil",Latha,system-ui,sans-serif;letter-spacing:normal}
+[lang="ta"] button,[lang="ta"] input,[lang="ta"] textarea,[lang="ta"] select{font-family:inherit;letter-spacing:normal}
+@media(max-width:640px){
+ [lang="ta"] .language-toggle{padding:7px 9px;font-size:10px}
+ [lang="ta"] .shortcut-tile{min-height:96px;justify-content:flex-start}
+ [lang="ta"] .shortcut-tile strong{font-size:10px;line-height:1.4;white-space:normal;overflow-wrap:anywhere;min-height:2.7em}
+ [lang="ta"] .festival-categories{justify-content:flex-start;gap:7px}
+ [lang="ta"] .festival-categories button{flex:0 0 auto;max-width:105px;white-space:normal;text-align:center;line-height:1.4;gap:5px;padding:11px 7px 13px}
+ [lang="ta"] .festival-categories button span{max-width:none;overflow:visible;text-overflow:clip;overflow-wrap:anywhere}
+ [lang="ta"] .festival-location{gap:7px;padding:9px;min-width:0}
+ [lang="ta"] .festival-location>span:nth-child(2){min-width:0;overflow-wrap:anywhere}
+ [lang="ta"] .festival-location strong,[lang="ta"] .festival-location small{line-height:1.45}
+ [lang="ta"] .location-action{white-space:normal;max-width:70px;text-align:center;line-height:1.35;gap:2px}
+ [lang="ta"] .section-heading{align-items:flex-start;flex-wrap:wrap}
+ [lang="ta"] .section-heading>div{min-width:0}
+ [lang="ta"] .section-kicker{letter-spacing:0;line-height:1.5;font-size:9px}
+ [lang="ta"] .text-link{white-space:normal;max-width:125px;line-height:1.5}
+ [lang="ta"] .product-grid{align-items:stretch}
+ [lang="ta"] .product-info h3{line-height:1.5;min-height:0;overflow-wrap:anywhere}
+ [lang="ta"] .product-meta{line-height:1.45;overflow-wrap:anywhere}
+ [lang="ta"] .product-label{line-height:1.5;white-space:normal}
+ [lang="ta"] .product-card .add-button{min-height:44px;line-height:1.4;white-space:normal}
+ [lang="ta"] .bundle-card{align-items:flex-start;min-width:0;overflow-wrap:anywhere}
+ [lang="ta"] .bundle-content{min-width:0}
+ [lang="ta"] .bundle-purchase{flex-wrap:wrap;gap:8px}
+ [lang="ta"] .bundle-purchase .add-button{max-width:100%;margin-top:5px}
+ [lang="ta"] .catalog-actions{gap:6px;min-width:0}
+ [lang="ta"] .catalog-actions select{max-width:48%;min-width:0;white-space:normal}
+ [lang="ta"] .categories button{line-height:1.45;white-space:normal;max-width:48%;overflow-wrap:anywhere}
+ [lang="ta"] dialog{max-height:90dvh;overflow-x:hidden;overflow-y:auto}
+ [lang="ta"] .modal-heading{align-items:flex-start;gap:8px}
+ [lang="ta"] .cart-row{align-items:flex-start;flex-wrap:wrap}
+ [lang="ta"] .cart-row>div:first-child{max-width:100%;min-width:0;overflow-wrap:anywhere}
+ [lang="ta"] .quantity{gap:6px}
+ [lang="ta"] .quantity button{min-width:38px;min-height:38px}
+ [lang="ta"] .field{line-height:1.5;overflow-wrap:anywhere}
+ [lang="ta"] .field input,[lang="ta"] .field select,[lang="ta"] .field textarea{min-width:0;line-height:1.5}
+ [lang="ta"] .checkout-submit,[lang="ta"] .checkout-buttons .button{width:100%;min-height:48px;white-space:normal;line-height:1.5;text-align:center}
+ [lang="ta"] .totals>div{align-items:flex-start;line-height:1.5}
+ [lang="ta"] .bulk-welcome-copy{min-width:0;overflow-wrap:anywhere}
+ [lang="ta"] .bulk-welcome-points{line-height:1.5}
+ [lang="ta"] .bulk-welcome-primary,[lang="ta"] .bulk-welcome-secondary{min-height:46px;line-height:1.5;white-space:normal}
+ [lang="ta"] .how-grid p,[lang="ta"] .service-highlights p{line-height:1.7}
+}

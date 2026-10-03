@@ -6,7 +6,8 @@ import '../src/styles/celebration.css';
 import '../src/styles/polish.css';
 import '../src/styles/bundles.css';
 import '../src/styles/bulk-welcome.css';
+import {LanguageProvider} from '../src/context/LanguageContext';
 
 export default function KstApp({Component,pageProps}:AppProps){
-  return <Component {...pageProps}/>;
+  return <LanguageProvider><Component {...pageProps}/></LanguageProvider>;
 }
