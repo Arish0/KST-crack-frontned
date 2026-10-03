@@ -7,6 +7,7 @@ import '../src/styles/polish.css';
 import '../src/styles/bundles.css';
 import '../src/styles/bulk-welcome.css';
 import '../src/styles/giftboxes.css';
+import '../src/styles/footer.css';
 import {LanguageProvider} from '../src/context/LanguageContext';
 
 export default function KstApp({Component,pageProps}:AppProps){
