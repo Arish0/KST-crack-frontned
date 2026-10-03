@@ -2,14 +2,14 @@ import React from 'react';
 import {useShop} from '../context/ShopContext';
 import {useLanguage} from '../context/LanguageContext';
 
-export default function Footer({onDiwaliGifts,showDiwaliGifts=false}:{onDiwaliGifts:()=>void;showDiwaliGifts?:boolean}) {
+export default function Footer({onDiwaliGifts,showDiwaliGifts=false,prizeCount=0}:{onDiwaliGifts:()=>void;showDiwaliGifts?:boolean;prizeCount?:number}) {
  const {catalog}=useShop(),{t}=useLanguage();
  const shop=catalog?.settings,contact=(shop?.whatsapp||shop?.phone||'').replace(/\D/g,'');
  const whatsappUrl=contact?`https://wa.me/${contact}?text=${encodeURIComponent('Hello KST Crackers, I would like a bulk gift box quotation.')}`:'';
  return <footer className="store-footer">
   <a className="back-top" href="#">Back to top</a>
   <div className="store-footer-main">
-   <section className="footer-brand-block"><a className="store-brand" href="/">kst<span>crackers</span></a><p>Celebrating Diwali, Pongal, and life moments with safety-tested authentic fireworks delivered direct from our trusted hubs.</p><span className="footer-trust-badge">&#10003; &nbsp;100% Genuine Sivakasi Stock</span>{showDiwaliGifts&&<button className="footer-diwali-link" type="button" onClick={onDiwaliGifts}>View Diwali Special Prizes &middot; 5 gifts</button>}</section>
+   <section className="footer-brand-block"><a className="store-brand" href="/">kst<span>crackers</span></a><p>Celebrating Diwali, Pongal, and life moments with safety-tested authentic fireworks delivered direct from our trusted hubs.</p><span className="footer-trust-badge">&#10003; &nbsp;100% Genuine Sivakasi Stock</span>{showDiwaliGifts&&<button className="footer-diwali-link" type="button" onClick={onDiwaliGifts}>Diwali Special Prizes &middot; {prizeCount} gifts</button>}</section>
    <section className="footer-links-block"><h3>Celebration Catalogs</h3><a href="#offers">Hot Festival Offers</a><a href="#catalog">Deluxe &amp; Color Sparklers</a><a href="#gift-boxes">Family Celebration Boxes</a><a href="#catalog">Night Sky Aerial Shots</a><a href="#catalog">Complete Price List</a></section>
    <section className="footer-delivery-block"><h3>Nilgiris &amp; Hub Delivery</h3><p>Priority same-day and scheduled doorstep supply across Kotagiri, Coonoor, Ooty, and surrounding 15 km radius.</p><div className="footer-hub-note"><strong>&#9906; Nilgiris Safe Dispatch Center</strong><span>Temperature-controlled, safe dry storage facility.</span></div></section>
    <section className="footer-support-block"><h3>Instant Support</h3><p>Need a custom corporate package or bulk festival quotation?</p>{whatsappUrl?<a className="footer-whatsapp" href={whatsappUrl} target="_blank" rel="noopener noreferrer">&#9993; &nbsp;WhatsApp Fast Quote</a>:<span className="footer-contact-pending">WhatsApp contact is being set up</span>}<small>&#9673; &nbsp;Responses in under 15 minutes</small></section>
