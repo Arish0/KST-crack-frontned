@@ -3,11 +3,12 @@ import {useLanguage} from '../context/LanguageContext';
 import Icon,{type IconName} from './Icon';
 
 interface HeaderProps{search:string;setSearch:(value:string)=>void;category:string;setCategory:(value:string)=>void;onSearch:()=>void;onOffers:()=>void;onDiwaliGifts:()=>void;diwaliGiftsEnabled:boolean}
-const categoryIcons:Record<string,IconName>={'Sparklers':'sparkles','Flower Pots':'flower','Ground Chakkars':'wheel','Aerial':'rocket','Gift Boxes':'gift'};
+const categoryIcons:Record<string,IconName>={'Sparklers':'sparkles','Flower Pots':'flower','Ground Chakras':'wheel','Ground Chakkars':'wheel','Firecrackers':'sparkles','Sound Blasters':'tag','Aerial':'rocket','Gift Boxes':'gift'};
 export default function Header({search,setSearch,category,setCategory,onSearch,onOffers,onDiwaliGifts,diwaliGiftsEnabled}:HeaderProps){
  const {catalog,totals,openCart,locate,locating,location,locationMessage}=useShop();
  const {language,t,toggleLanguage,category:translateCategory}=useLanguage();
- const categories:string[]=['All',...Array.from(new Set<string>((catalog?.products||[]).map(p=>p.category)))];
+ const available=new Set((catalog?.products||[]).map(p=>p.category));
+ const categories:string[]=['All','Sparklers','Flower Pots','Ground Chakras','Firecrackers','Sound Blasters','Aerial',...(available.has('Gift Boxes')?['Gift Boxes']:[])];
  const select=(value:string)=>{setCategory(value);onSearch();};
  const shortcuts=[{label:'Hot deals',caption:'More savings',icon:'tag' as IconName,tone:'orange',action:onOffers},{label:'Bundles',caption:'Better together',icon:'gift' as IconName,tone:'green',href:'#bundles'},{label:'Sparklers',caption:'Light up the evening',icon:'sparkles' as IconName,tone:'pink',action:()=>select('Sparklers')},{label:'Gift boxes',caption:'Celebration sets',icon:'gift' as IconName,tone:'blue',action:()=>select('Gift Boxes')},...(diwaliGiftsEnabled?[{label:'Diwali gifts',caption:'Gifts with qualifying orders',icon:'gift' as IconName,tone:'gold',action:onDiwaliGifts}]:[]),{label:'All crackers',caption:'Full collection',icon:'rocket' as IconName,tone:'gold',action:()=>select('All')}];
  return <header className="festival-header" id="home">

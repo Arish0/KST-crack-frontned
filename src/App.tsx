@@ -35,8 +35,6 @@ export default function App(){
   if(showOffer)setWelcomeStage('diwali-gifts');else if(!bulkSeen)setWelcomeStage('bulk');
  },[loading,catalog,promotion]);
  const offers=useMemo(()=>[...(catalog?.products||[])].filter(p=>p.discount>0).sort((a,b)=>b.discount-a.discount).slice(0,4),[catalog]);
- const sold=useMemo(()=>(catalog?.products||[]).filter(p=>p.sold>0).sort((a,b)=>b.sold-a.sold),[catalog]);
- const favourites=(sold.length?sold:catalog?.products.filter(p=>p.featured)||[]).slice(0,4);
  const scroll=()=>document.getElementById('catalog')?.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
  const browse=(value:string)=>{setSort(value);scroll();};
  const browseGiftBoxes=()=>{setSearch('');setCategory('Gift Boxes');setSort('featured');requestAnimationFrame(scroll);};
@@ -54,7 +52,14 @@ export default function App(){
    <GiftBoxSection onViewAll={browseGiftBoxes} preview={previewGiftBoxes}/>
    <ProductSection id="offers" title={t('Festival deals')} kicker={t('SAVE ON YOUR CELEBRATION')} products={offers} label={t('Festival offer')} link={t('See all offers')} onLink={()=>browse('offers')}/>
    <BundleSection/>
-   <ProductSection id="favourites" title={t(sold.length?'Your most-loved crackers':'Featured crackers')} kicker={t('EXPLORE THE COLLECTION')} products={favourites} label={t(sold.length?'Best seller':'Shop favourite')} link={t('Browse favourites')} onLink={()=>browse('bestsellers')}/>
+   <div className="cracker-category-sections">{[
+    {name:'Sparklers',match:['Sparklers']},
+    {name:'Flower Pots',match:['Flower Pots']},
+    {name:'Ground Chakras',match:['Ground Chakras','Ground Chakkars']},
+    {name:'Firecrackers',match:['Firecrackers']},
+    {name:'Sound Blasters',match:['Sound Blasters']},
+    {name:'Aerial',match:['Aerial']},
+   ].map(({name,match})=><ProductSection key={name} id={'category-'+name.toLowerCase().replaceAll(' ','-')} title={t(name)} kicker={t('EXPLORE THE COLLECTION')} products={(catalog?.products||[]).filter(p=>match.includes(p.category))} label="" link={t('Shop all crackers')} onLink={()=>{setSearch('');setCategory(match[0]);scroll();}}/>)}</div>
    <Catalog search={search} setSearch={setSearch} category={category} setCategory={setCategory} sort={sort} setSort={setSort}/>
    <HowItWorks/>
   </main>
