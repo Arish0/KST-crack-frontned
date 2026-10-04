@@ -35,6 +35,7 @@
 .pack-spark{position:absolute;color:#ffe1a1;animation:spark-twinkle 3s ease-in-out infinite;pointer-events:none}
 .spark-one{left:3%;top:43px;font-size:27px}.spark-two{right:7%;top:19px;font-size:35px;animation-delay:-1s}.spark-three{left:39%;top:4px;font-size:11px;animation-delay:-2s}
 .festival-artwork{animation:artwork-float 6s ease-in-out infinite}
+.bundle-hero-image{position:relative;z-index:1;display:block;width:min(100%,300px);height:100%;max-height:300px;object-fit:contain;filter:drop-shadow(0 10px 16px #032f2740);animation:artwork-float 6s ease-in-out infinite}
 @keyframes float-navy{0%,100%{transform:translateY(0) rotate(-12deg)}50%{transform:translateY(-10px) rotate(-9deg)}}
 @keyframes float-coral{0%,100%{transform:translateY(0) rotate(11deg)}50%{transform:translateY(-7px) rotate(14deg)}}
 @keyframes float-saving{0%,100%{transform:translateY(0) rotate(-10deg)}50%{transform:translateY(-5px) rotate(-7deg)}}
@@ -42,4 +43,4 @@
 @keyframes artwork-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
 @media(max-width:640px){.carousel-arrows button{height:40px;width:40px}.festival-header{border-radius:0 0 24px 24px}.celebration-packs{height:221px}.pack-navy{width:142px;height:175px;left:9%;top:22px}.pack-coral{width:110px;height:145px;left:48%;top:67px}.celebration-saving{width:99px;height:99px;right:-3px;bottom:0}.celebration-saving strong{font-size:32px}.celebration-saving small{font-size:8px}.celebration-saving span{font-size:7px}.celebration-pack strong{font-size:23px}.pack-coral strong{font-size:13px}.celebration-pack small{font-size:6px;letter-spacing:1px}}
 @media(max-width:360px){.celebration-packs{height:200px}.pack-navy{width:127px;height:157px;left:7%}.pack-coral{width:98px;height:133px;top:60px}.celebration-saving{width:88px;height:88px;right:-6px}.celebration-saving strong{font-size:29px}}
-@media(prefers-reduced-motion:reduce){.celebration-pack,.celebration-saving,.pack-spark,.festival-artwork{animation:none;will-change:auto}.festival-header,.festival-search,.search-go,.festival-location,.mobile-header-cart{transition:none}}
+@media(prefers-reduced-motion:reduce){.celebration-pack,.celebration-saving,.pack-spark,.festival-artwork,.bundle-hero-image{animation:none;will-change:auto}.festival-header,.festival-search,.search-go,.festival-location,.mobile-header-cart{transition:none}}
