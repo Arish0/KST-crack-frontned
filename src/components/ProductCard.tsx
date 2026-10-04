@@ -14,10 +14,11 @@ export default function ProductCard({product:p,label='',variant='default',previe
   <div className={`product-art art-${art}`}>
    {p.discount>0&&<span className="product-discount">{p.discount}% {t('OFF')}</span>}
    {p.image&&!failed?<img src={p.image} alt={p.name} loading="lazy" decoding="async" width="240" height="200" onError={()=>setFailed(true)}/>:<div className="illustration" aria-hidden="true"><div className="pack"><span>{symbols[art]}</span><b>KST</b><small>{category(p.category)}</small></div><span className="art-spark">{symbols[art]}</span></div>}
+   {variant==='giftbox'&&<div className="giftbox-image-meta"><span className="giftbox-image-category">{category(p.category)}</span>{label&&<span className="giftbox-image-label">{t(label)}</span>}</div>}
    {quantity>0&&<span className="product-cart-status"><Icon name="check"/>{t('{count} in cart',{count:quantity})}</span>}
   </div>
   <div className="product-info">
-   <div className="product-meta"><span className="product-category">{category(p.category)}</span>{label&&<span className="product-label">{t(label)}</span>}</div>
+   {variant!=='giftbox'&&<div className="product-meta"><span className="product-category">{category(p.category)}</span>{label&&<span className="product-label">{t(label)}</span>}</div>}
    <h3>{p.name}</h3><div className="unit">{p.unit}</div>{variant==='giftbox'&&p.description&&<p className="giftbox-description">{p.description}</p>}
    <div className="product-pricing"><span className="price">{money(sellingPrice(p))}</span>{p.discount>0&&<span className="mrp"><del>{money(p.price)}</del></span>}</div>
    {p.discount>0&&<div className="product-save">{t('Save {amount}',{amount:money(p.price-sellingPrice(p))})}</div>}
