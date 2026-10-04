@@ -26,6 +26,7 @@
 .celebration-gift-art{display:block;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 9px 14px #54240e35);animation:artwork-float 6s ease-in-out infinite}
 .festival-artwork{animation:artwork-float 6s ease-in-out infinite}
 .bundle-hero-image{position:relative;z-index:1;display:block;width:min(100%,300px);height:100%;max-height:300px;object-fit:contain;filter:drop-shadow(0 10px 16px #032f2740);animation:artwork-float 6s ease-in-out infinite}
+.sparkler-assortment-image{position:relative;z-index:1;display:block;width:min(100%,410px);height:100%;max-height:300px;object-fit:contain;filter:drop-shadow(0 9px 14px #3b092b35);animation:artwork-float 6s ease-in-out infinite}
 .sparkler-scene{position:relative;z-index:1;width:min(100%,440px);height:100%;max-height:300px;min-height:220px;isolation:isolate;animation:artwork-float 6s ease-in-out infinite}
 .sparkler-scene canvas,.sparkler-fallback{position:absolute;inset:0;display:block;width:100%;height:100%;pointer-events:none}
 .sparkler-fallback{transition:opacity .25s ease;filter:drop-shadow(0 8px 14px #40102735)}
@@ -37,4 +38,4 @@
 @keyframes artwork-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
 @media(max-width:640px){.carousel-arrows button{height:40px;width:40px}.festival-header{border-radius:0 0 24px 24px}.celebration-packs{max-height:221px}}
 @media(max-width:360px){.celebration-packs{max-height:200px}}
-@media(prefers-reduced-motion:reduce){.celebration-gift-art,.festival-artwork,.bundle-hero-image,.sparkler-scene{animation:none;will-change:auto}.festival-header,.festival-search,.search-go,.festival-location,.mobile-header-cart{transition:none}}
+@media(prefers-reduced-motion:reduce){.celebration-gift-art,.festival-artwork,.bundle-hero-image,.sparkler-assortment-image,.sparkler-scene{animation:none;will-change:auto}.festival-header,.festival-search,.search-go,.festival-location,.mobile-header-cart{transition:none}}
