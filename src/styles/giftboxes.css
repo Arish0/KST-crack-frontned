@@ -14,3 +14,9 @@
 @media(prefers-reduced-motion:reduce){.giftbox-view-all{transition:none}}
 
 .giftbox-preview-note{margin:14px 2px 0;color:#806d67;font-size:10px}
+
+/* Match every uploaded aspect ratio to the product frame without distorting or cropping the item. */
+.product-art-fill{position:absolute;inset:-12px;z-index:0;overflow:hidden;pointer-events:none;opacity:.42;filter:blur(16px);transform:scale(1.06)}
+.product-art-fill img{display:block;width:100%;height:100%;padding:0!important;object-fit:cover!important;background:transparent!important}
+.product-art>.product-art-main{position:relative;z-index:1;display:block;width:100%;height:100%;padding:10px;object-fit:contain;background:transparent}
+.giftbox-product-card .product-art>.product-art-main{padding:0}
