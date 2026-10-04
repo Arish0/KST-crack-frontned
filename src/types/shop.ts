@@ -1,5 +1,5 @@
 export type ProductArt='spark'|'pot'|'wheel'|'sky'|'gift';
-export interface Product{id:string;name:string;category:string;unit:string;packQuantity?:number;description?:string;price:number;discount:number;stock:number;featured:boolean;art:ProductArt;image?:string;image2?:string;video?:string;sold:number}
+export interface Product{id:string;name:string;category:string;unit:string;packQuantity?:number;description?:string;price:number;discount:number;stock:number;featured:boolean;art:ProductArt;image?:string;image2?:string;images?:string[];video?:string;sold:number}
 export interface BundleItem{id:string;qty:number}
 export interface Bundle{id:string;name:string;description:string;price:number;stock:number;items:BundleItem[]}
 export interface ShopSettings{name:string;phone:string;whatsapp:string;hubLat:number|null;hubLng:number|null;radius:number;deliveryFee:number;banner:string}
